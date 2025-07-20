@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MeetSum - AI Meeting Summarizer</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📋 MeetSum</h1>
+        <p>Your smart assistant to summarize meeting transcripts</p>
+
+        <div class="card">
+            <h2>🔤 Text Input</h2>
+            <form id="textForm">
+                <textarea id="textInput" placeholder="Paste your transcript text here..." required></textarea>
+                <button type="submit">Summarize</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <h2>📁 Upload File (.txt, .pdf, .docx)</h2>
+            <form id="fileForm" enctype="multipart/form-data">
+                <input type="file" id="fileInput" name="file" accept=".txt,.pdf,.docx" required>
+                <button type="submit">Upload & Summarize</button>
+            </form>
+        </div>
+
+        <div class="result-box" id="resultBox">
+            <h2>📝 Summary</h2>
+            <pre id="summaryOutput">Your summary will appear here...</pre>
+        </div>
+    </div>
+
+    <script>
+        // Text summary form
+        document.getElementById("textForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const text = document.getElementById("textInput").value;
+            const formData = new FormData();
+            formData.append("text", text);
+
+            document.getElementById("summaryOutput").textContent = "⏳ Summarizing...";
+
+            const res = await fetch("/summarize/text", {
+                method: "POST",
+                body: formData,
+            });
+            const data = await res.json();
+            document.getElementById("summaryOutput").textContent = data.summary || data.error;
+        });
+
+        // File summary form
+        document.getElementById("fileForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const fileInput = document.getElementById("fileInput");
+            if (fileInput.files.length === 0) return;
+
+            const formData = new FormData();
+            formData.append("file", fileInput.files[0]);
+
+            document.getElementById("summaryOutput").textContent = "⏳ Uploading and summarizing...";
+
+            const res = await fetch("/summarize/file", {
+                method: "POST",
+                body: formData,
+            });
+            const data = await res.json();
+            document.getElementById("summaryOutput").textContent = data.summary || data.error;
+        });
+    </script>
+</body>
+</html>
