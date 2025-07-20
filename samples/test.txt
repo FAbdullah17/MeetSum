@@ -1,0 +1,67 @@
+Good morning, everyone. Before we begin, I want to thank all of you for making the time to join this extended strategy meeting today. As you all know, we’re at a critical junction in the Q3 planning cycle, and this session will help us clarify priorities and allocate the right resources to the right initiatives.
+
+To start with, let’s take a look at the performance metrics from Q2. Amy, could you walk us through the core KPIs, particularly around user growth, churn, and NPS?
+
+Yes, thank you, Jordan. So, in Q2, we observed a 12.4% increase in new user sign-ups compared to Q1, which was largely driven by our mid-quarter influencer campaign and organic SEO gains. However, churn has also increased slightly from 3.1% to 3.6%, which is statistically significant. The customer success team flagged onboarding inconsistencies as a possible factor here. Our Net Promoter Score dipped from 56 to 48, with most detractors citing long resolution times on support tickets.
+
+Thank you, Amy. This is helpful and a bit concerning. I want action items on both churn and support latency — let’s take that up in the operations section. Now, moving on to product development. Nate, where are we on the beta for the mobile experience redesign?
+
+We’re about 70% through development. The internal QA feedback has been positive on the new onboarding flow and accessibility enhancements. However, there’s a known bug in the Android version that causes the app to crash when backgrounded and reopened. We’ve escalated that, and a hotfix is in development. I anticipate the closed beta launch by next Friday, assuming regression tests are cleared.
+
+Alright, good. Make sure comms has a rollout narrative prepared — I don’t want our power users to be surprised. Sandra, on the partnerships front, how are we progressing with the Zapier and Salesforce integrations?
+
+Salesforce integration is about 85% done. The hold-up is on their end regarding API rate-limit documentation. Our tech leads are in active sync with theirs. As for Zapier, we’re in final review of the triggers and actions. We’ll have an MVP version for internal use by Monday, with a public release likely two weeks after.
+
+Thanks. Let’s move to the budgeting round. We've had increased costs in infra due to AI model retraining cycles and the increase in traffic. Steven, can you walk us through the breakdown?
+
+Sure. The spike is primarily in our GPU-based workloads. Between mid-May and June, we retrained three core models — recommendation, summarization, and fraud detection — each with about 5–10M data points. That took up about 60% of the monthly GPU budget. Additionally, some autoscaling misconfigurations caused container bloat during load testing. We've since patched that, but it caused a 22% month-over-month increase in spend.
+
+That’s a lot. We need to optimize these costs. I want a formal proposal from DevOps by Monday on GPU time usage caps and smarter autoscaling rules. Now, before we move to marketing — Lisa, are you here?
+
+Hi yes, I’m on. Just switching from mobile to desktop. Go ahead.
+
+No problem. On marketing — I reviewed the Q3 plan and had a few questions. The customer segmentation is now based on behavioral clusters instead of demographics. Can you elaborate on how that changes our targeting?
+
+Absolutely. So instead of targeting, say, users aged 25–34 in urban areas, we’re targeting behavioral profiles — like 'power testers,' 'onboarding drop-offs,' and 'high referral engagers.' This allows us to tailor email copy and ad creatives more precisely. Early tests show a 22% lift in CTR and 17% increase in conversion rates.
+
+Impressive. Okay, keep that direction. Are we sticking with the LinkedIn + Google mix for paid acquisition?
+
+We’re adding Twitter back into the mix for B2B lead gen, especially since our new case studies are getting traction in dev communities. Budget’s being rebalanced slightly to accommodate that.
+
+Makes sense. And I assume brand spends are paused?
+
+Temporarily, yes. Unless we see Q3 metrics that justify reactivation.
+
+Alright. Moving on — I’d like to introduce the next item, which is our AI Ethics & Compliance framework. Given our growing usage of ML, we need a set of guidelines around bias audits, human-in-the-loop systems, and model explainability. Brian, you’ve been leading this. Can you walk us through the draft?
+
+Of course. So the framework consists of five pillars: 1) data provenance and sourcing; 2) periodic bias assessments on training data and predictions; 3) auditability through logs and reproducibility; 4) a human override system for high-risk classifications; and 5) a transparency pledge for customer-facing ML usage. We’re recommending a quarterly review cadence and internal documentation of any model drift observed.
+
+Very thorough. I’d like this codified into our MLOps lifecycle. Also, legal should review this before it’s made public-facing. Any objections?
+
+[Silence]
+
+Alright. Consider it approved pending legal. Now, circling back to the earlier point on customer churn — Michelle, I’d like you and Jacob to co-lead a sprint on onboarding UX next week. Let’s reduce friction on day one. Track that in Monday.com and report on progress by Friday.
+
+Will do.
+
+Thanks. Before we wrap, anyone else with final inputs?
+
+Actually, Jordan, I had one item. We’ve noticed an uptick in customer requests for usage analytics in the dashboard — session time, feature adoption, and so on. Could we consider that for Q3?
+
+Good catch. Add that as a stretch goal for the data team. If capacity allows, we’ll prioritize it.
+
+Great. Thank you.
+
+Alright, folks. Let’s summarize:
+
+- 🧾 Amy to investigate churn with CS and report findings
+- 🔧 Nate to launch beta post-hotfix and prep comms with marketing
+- 🤝 Sandra to finalize integrations and update on Zapier release
+- 💰 Steven to submit GPU optimization plan by Monday
+- 📈 Lisa to proceed with behavioral targeting and channel adjustments
+- 🤖 Brian’s AI Ethics draft to go through legal and be adopted in MLOps
+- 👋 Michelle + Jacob to lead onboarding UX sprint
+
+Let’s reconvene next Thursday for a shorter sync. Meeting adjourned.
+
+[End of Transcript]
